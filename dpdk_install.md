@@ -38,7 +38,7 @@ rpm -iv kernel-devel-3.10.0-693.el7.x86_64.rpm
 ```
 [16] Insert IGB UIO module
 ```
-* option:20 设置numa架构cpu的hugepage页数(默认hugepagesz大小是2MB，如果需要设置1G hugepagesz，需要启动系统时引导）
+* option:20 设置numa架构cpu的hugepage页数(1G hugepagesz需要在启动系统时引导）
 ```
 [19] Setup hugepage mappings for non-NUMA systems
 [20] Setup hugepage mappings for NUMA systems
