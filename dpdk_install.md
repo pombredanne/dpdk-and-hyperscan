@@ -38,7 +38,7 @@ rpm -iv kernel-devel-3.10.0-693.el7.x86_64.rpm
 ```
 [16] Insert IGB UIO module
 ```
-* option:20 设置numa架构cpu的hugepage页数(1G hugepagesz需要在启动系统时引导）
+* option:20 设置numa架构cpu的hugepage页数(1G hugepagesz需要在系统启动时引导）
 ```
 [19] Setup hugepage mappings for non-NUMA systems
 [20] Setup hugepage mappings for NUMA systems
@@ -62,11 +62,11 @@ rpm -iv kernel-devel-3.10.0-693.el7.x86_64.rpm
 ```
 export RTE_TARGET=x86_64-native-linuxapp-gcc
 ```
-* 设置bitmask掩码(掩码的设置可以参考./usertools/cpu_layout.py执行结果来确定，举例：如果cpu为2核心，bitmash应为0x03)
+* 设置bitmask(参考./usertools/cpu_layout.py脚本执行结果)
 ```
 bitmask:0x03
 ```
-* 虚拟机环境可能遇到错误："EAL: Error reading from file descriptor 15: Input/output error" 解决方法如下：(更改代码以使dpdk跳过PCI检查，需要重新编译和导入igb_uio模块)
+* 虚拟机环境可能遇到错误："EAL: Error reading from file descriptor 15: Input/output error" 需要更改代码使dpdk跳过PCI检查，并重新编译和导入igb_uio模块)
 ```
 cd /home/DH/dpdk/dpdk-stable-17.08.2
 vim lib/librte_eal/linuxapp/igb_uio/igb_uio.c
