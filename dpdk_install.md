@@ -1,4 +1,4 @@
-#### 编译、配置和使用DPDK
+#### centos7编译、配置和使用DPDK
 
 ##### 1. 安装gcc
 ```
@@ -97,3 +97,8 @@ make
 ```
 ./build/app/helloworld
 ```
+
+##### 9. 参考文档
+
+* [官方文档-英文](http://doc.dpdk.org/guides/linux_gsg/index.html)
+* [官方文档-翻译](https://dpdk-docs.readthedocs.io/en/latest/linux_gsg/index.html)
