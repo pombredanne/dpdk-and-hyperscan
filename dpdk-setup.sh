@@ -15,7 +15,7 @@ USER_HOME_DIRECTORY=$(cd ~; pwd)
 #~/.bash_profile路径
 PROFILE_PATH=$(find $USER_HOME_DIRECTORY -type f -name ".bash_profile" -print)
 
-#设置环境变量RTE_SDK、RTE_TARGET、EXTRA_CFLAGS到配置文件，需要使用source ~/.bash_profile使之生效
+#设置环境变量RTE_SDK、RTE_TARGET、EXTRA_CFLAGS到配置文件
 function set_compile_env()
 {
 	if [ -z "$RTE_SDK" ]; then
@@ -24,7 +24,7 @@ function set_compile_env()
 	fi
 
 	if [ -z "$RTE_TARGET" ]; then
-        	echo RT_TARGET="$RTE_TARGET_PATH" >> $PROFILE_PATH
+        	echo RTE_TARGET="$RTE_TARGET_PATH" >> $PROFILE_PATH
 		echo "export RTE_TARGET" >> $PROFILE_PATH
 	fi
 	
@@ -34,7 +34,19 @@ function set_compile_env()
 	fi
 }
 
+#设置1G大小的hugepage需要在系统引导时设置
+#function set_hugepage_1G()
+#{
+#	 
+#
+#}
+
 #设置环境变量
 if [[ -z "$(sed -n '/RTE_*/p' $PROFILE_PATH)" ]] || [[ -z $(sed -n '/EXTRA_CFLAGS/p' $PROFILE_PATH) ]]; then
 	set_compile_env
+fi
+
+#检测是否设置成功
+if [[ -n "$RTE_SDK" ]] && [[ -n "$RTE_TARGET" ]] && [[ -n $EXTRA_CFLAGS ]]; then
+	echo "DPDK compile envirnoment set success"
 fi
