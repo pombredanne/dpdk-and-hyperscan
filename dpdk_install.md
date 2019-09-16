@@ -30,24 +30,24 @@ rpm -iv kernel-devel-3.10.0-693.el7.x86_64.rpm
 ```
 ./usertools/dpdk-setup.sh
 ```
-* option:13 创建dpdk目标环境
+* 创建dpdk目标环境
 ```
 [13] x86_64-native-linuxapp-gcc
 ```
-* option:16 导入igb_uio模块
+* 导入igb_uio模块
 ```
 [16] Insert IGB UIO module
 ```
-* option:20 设置numa架构cpu的hugepage页数(1G hugepagesz需要在系统启动时引导）
+* 设置numa架构cpu的hugepage页数(1G hugepagesz需要在系统启动时引导）
 ```
 [19] Setup hugepage mappings for non-NUMA systems
 [20] Setup hugepage mappings for NUMA systems
 ```
-* option:22 绑定网卡到igb_uio模块(如果绑定失败，可以使用脚本./usertools/dpdk-devbind --bind=igb_uio --force <网卡地址如：02:06.0>绑定)
+* 绑定网卡到igb_uio模块(如果绑定失败，可以使用脚本./usertools/dpdk-devbind --bind=igb_uio --force <网卡地址如：02:06.0>绑定)
 ```
 [22] Bind Ethernet/Crypto device to IGB UIO module
 ```
-* option:21, 27 查看参数设置
+* 查看参数设置
 ```
 [21] Display current Ethernet/Crypto device settings
 [27] List hugepage info from /proc/meminfo
