@@ -43,18 +43,18 @@ rpm -iv kernel-devel-3.10.0-693.el7.x86_64.rpm
 [19] Setup hugepage mappings for non-NUMA systems
 [20] Setup hugepage mappings for NUMA systems
 ```
-* 绑定网卡到igb_uio模块(如果绑定失败，可以使用脚本./usertools/dpdk-devbind --bind=igb_uio --force <网卡地址如：02:06.0>绑定)
+* 绑定网卡到igb_uio模块(如果绑定失败，可以使用脚本./usertools/dpdk-devbind <--force>绑定)
 ```
 [22] Bind Ethernet/Crypto device to IGB UIO module
 ```
-* 查看参数设置
+* 确认是否设置成功
 ```
 [21] Display current Ethernet/Crypto device settings
 [27] List hugepage info from /proc/meminfo
 ```
 
 ##### 7.运行测试程序testpmd
-* option:26 运行testpmd
+* 运行testpmd
 ```
 [26] Run testpmd application in interactive mode ($RTE_TARGET/app/testpmd)
 ```
