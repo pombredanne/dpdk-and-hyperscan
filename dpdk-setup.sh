@@ -34,19 +34,12 @@ function set_compile_env()
 	fi
 }
 
-#设置1G大小的hugepage需要在系统引导时设置
-#function set_hugepage_1G()
-#{
-#	 
-#
-#}
-
 #设置环境变量
 if [[ -z "$(sed -n '/RTE_*/p' $PROFILE_PATH)" ]] || [[ -z $(sed -n '/EXTRA_CFLAGS/p' $PROFILE_PATH) ]]; then
 	set_compile_env
 fi
 
-#检测是否设置成功
+#检测环境变量是否设置成功
 if [[ -n "$RTE_SDK" ]] && [[ -n "$RTE_TARGET" ]] && [[ -n $EXTRA_CFLAGS ]]; then
 	echo "DPDK compile envirnoment set success"
 fi
