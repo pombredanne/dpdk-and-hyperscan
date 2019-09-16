@@ -84,7 +84,7 @@ set(DPDK_LIBS
 	rte_vhost)
 
 if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/iniparser AND BUILD_INIPARSER)
-	message("build iniparser library")
+	message("-- build iniparser library")
 	include_directories(iniparser)
 	add_subdirectory(iniparser)
 	set(EXTRA_LIBS ${EXTRA_LIBS} iniparser)
