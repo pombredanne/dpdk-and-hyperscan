@@ -1,6 +1,4 @@
-#### 安装步骤
-
-依赖库版本要求：
+#### 依赖库版本要求
 
 | Dependency | Version | Notes |
 | :------------: | :----: | :--------: |
@@ -9,6 +7,8 @@
 | python | 2.7 |  |
 | boost | >=1.57 | boost header required |
 | pcap | >= 0.8 | optional：needed for example only |
+
+#### 安装步骤
 
 1. 安装gcc
 ```
