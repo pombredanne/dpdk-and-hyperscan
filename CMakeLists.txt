@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(network_protocol_filtering)
+project(dpdk_and_hyperscan)
 
 set(RTE_SDK ${CMAKE_CURRENT_SOURCE_DIR}/dpdk/dpdk-stable-17.08.2)
 
@@ -90,7 +90,7 @@ if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/iniparser AND BUILD_INIPARSER)
 	set(EXTRA_LIBS ${EXTRA_LIBS} iniparser)
 endif()
 
-aux_source_directory(./filter SRC_DIR)
+aux_source_directory(./src SRC_DIR)
 
 include_directories(${INC_DIR})
 
